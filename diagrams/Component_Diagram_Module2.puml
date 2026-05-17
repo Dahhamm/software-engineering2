@@ -1,0 +1,19 @@
+@startuml
+package "Module 2: Finance & Insurance" {
+  [Billing System] --> [Insurance System] : Verify Coverage
+  [Billing System] --> [Patient Record] : Fetch Patient Data
+  [Billing System] --> [Payment Gateway] : Process Payments
+  [Billing System] --> [Service Log] : Retrieve Services Provided
+}
+
+package "External Systems" {
+  [Admission System]
+  [Pharmacy System]
+  [Bed Management]
+}
+
+[Insurance System] --> [External: Admission System] : Check Patient Risk File
+[Service Log] --> [External: Pharmacy System] : Add Medication Costs
+[Service Log] --> [External: Bed Management] : Add Stay Costs
+
+@enduml
